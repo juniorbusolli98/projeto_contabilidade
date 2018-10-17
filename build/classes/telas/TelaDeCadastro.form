@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabelquantidadeDeFilhos" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtQuantidadeDeFilhos" pref="226" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelhorasExtras" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelsalarioLiquido" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelsalarioBruto" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtSalarioLiquido" max="32767" attributes="0"/>
+                              <Component id="txtHorasExtras" pref="226" max="32767" attributes="0"/>
+                              <Component id="txtSalarioBruto" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabelnivelDeInsalubridade" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="RBinsalubridadeSim" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="RBInsalubridadeNao" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTextFieldNivelDeInsalubridade" min="-2" pref="140" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jButtonGerar" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelPericulosidade" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="RBPericulosidadeSim" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="RBPericulosidadeNao" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelsalarioLiquido" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="txtSalarioLiquido" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelsalarioBruto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSalarioBruto" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelhorasExtras" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="txtHorasExtras" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelquantidadeDeFilhos" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="txtQuantidadeDeFilhos" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="RBinsalubridadeSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="RBInsalubridadeNao" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldNivelDeInsalubridade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabelnivelDeInsalubridade" min="-2" pref="24" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelPericulosidade" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="RBPericulosidadeSim" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="RBPericulosidadeNao" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="56" max="32767" attributes="0"/>
+              <Component id="jButtonGerar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabelsalarioLiquido">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Salario Liquido"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtSalarioLiquido">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelhorasExtras">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Horas Extras"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtHorasExtras">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelquantidadeDeFilhos">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Quantidade de filhos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtQuantidadeDeFilhos">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelnivelDeInsalubridade">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Nivel de Insalubridade"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="RBinsalubridadeSim">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sim"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RBinsalubridadeSimActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="RBInsalubridadeNao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldNivelDeInsalubridade">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelPericulosidade">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Periculosidade"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="RBPericulosidadeSim">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sim"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="RBPericulosidadeNao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xe3;o"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonGerar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gerar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGerarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelsalarioBruto">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Salario Bruto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtSalarioBruto">
+    </Component>
+  </SubComponents>
+</Form>
