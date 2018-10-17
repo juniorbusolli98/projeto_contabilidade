@@ -1,0 +1,2 @@
+# trabalhoContabilidade
+Commit inicial
