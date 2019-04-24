@@ -6,7 +6,7 @@ import java.sql.Time;
 public class Funcionario {
    
 
-    
+    private boolean inss;
     private String nome;
     private double salarioBruto;
     private double salarioLiquido;
@@ -21,7 +21,7 @@ public class Funcionario {
     
     
     public Funcionario(String nome, double salarioBruto, double salarioLiquido, double horasExtras, int quantidadeDeFilhos, int nivelDeInsalubridade,
-            Boolean periculosidade) {
+            Boolean periculosidade, Boolean inss) {
         this.nome = nome;
         this.salarioBruto = salarioBruto;
         this.salarioLiquido = salarioLiquido;
@@ -29,6 +29,7 @@ public class Funcionario {
         this.nivelDeInsalubridade = nivelDeInsalubridade;
         this.horasExtras = horasExtras;
         this.periculosidade = periculosidade;
+        this.inss = inss;
     }
 
     
@@ -79,6 +80,8 @@ public class Funcionario {
        return horasExtras;
    }
    
+   
+   
    public void setPericulosidade(Boolean periculosidade){
        this.periculosidade = periculosidade;
    }
@@ -86,4 +89,15 @@ public class Funcionario {
        return periculosidade;
        
    }
+   
+   public void setInss(Boolean inss){
+       this.inss = inss;
+   }
+   
+   public Boolean getInss(){
+       return inss;
+       
+   }
+   
+   
 }
