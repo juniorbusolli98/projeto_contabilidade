@@ -1,7 +1,9 @@
 
 package telas;
 
-import model.ModeloTelaDeCadastroFuncionario;
+import dao.FuncionarioDAO;
+import java.sql.Time;
+import model.Funcionario;
 
 public class TelaDeCadastro extends javax.swing.JFrame {
 
@@ -15,62 +17,91 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        rbnInsBaixo = new javax.swing.JRadioButton();
         jLabelsalarioLiquido = new javax.swing.JLabel();
-        txtSalarioLiquido = new javax.swing.JTextField();
+        txtSalarioBruto = new javax.swing.JTextField();
         jLabelhorasExtras = new javax.swing.JLabel();
         txtHorasExtras = new javax.swing.JTextField();
         jLabelquantidadeDeFilhos = new javax.swing.JLabel();
         txtQuantidadeDeFilhos = new javax.swing.JTextField();
         jLabelnivelDeInsalubridade = new javax.swing.JLabel();
-        RBinsalubridadeSim = new javax.swing.JRadioButton();
-        RBInsalubridadeNao = new javax.swing.JRadioButton();
-        jTextFieldNivelDeInsalubridade = new javax.swing.JTextField();
         jLabelPericulosidade = new javax.swing.JLabel();
-        RBPericulosidadeSim = new javax.swing.JRadioButton();
-        RBPericulosidadeNao = new javax.swing.JRadioButton();
-        jButtonGerar = new javax.swing.JButton();
-        jLabelsalarioBruto = new javax.swing.JLabel();
-        txtSalarioBruto = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
+        lblnome = new javax.swing.JLabel();
+        txtnome = new javax.swing.JTextField();
+        rbnInsMedio = new javax.swing.JRadioButton();
+        rbnInsAlto = new javax.swing.JRadioButton();
+        cbPericulosidade = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        buttonGroup1.add(rbnInsBaixo);
+        rbnInsBaixo.setText("10%");
+        rbnInsBaixo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnInsBaixoActionPerformed(evt);
+            }
+        });
 
         jLabelsalarioLiquido.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelsalarioLiquido.setText("Salario Liquido");
+        jLabelsalarioLiquido.setText("Salario  (Bruto)");
+
+        txtSalarioBruto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSalarioBrutoActionPerformed(evt);
+            }
+        });
 
         jLabelhorasExtras.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelhorasExtras.setText("Horas Extras");
 
+        txtHorasExtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHorasExtrasActionPerformed(evt);
+            }
+        });
+
         jLabelquantidadeDeFilhos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelquantidadeDeFilhos.setText("Quantidade de filhos");
+
+        txtQuantidadeDeFilhos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtQuantidadeDeFilhosActionPerformed(evt);
+            }
+        });
 
         jLabelnivelDeInsalubridade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelnivelDeInsalubridade.setText("Nivel de Insalubridade");
 
-        RBinsalubridadeSim.setText("Sim");
-        RBinsalubridadeSim.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RBinsalubridadeSimActionPerformed(evt);
-            }
-        });
-
-        RBInsalubridadeNao.setText("Não");
-
         jLabelPericulosidade.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabelPericulosidade.setText("Periculosidade");
 
-        RBPericulosidadeSim.setText("Sim");
-
-        RBPericulosidadeNao.setText("Não");
-
-        jButtonGerar.setText("Gerar");
-        jButtonGerar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalvar.setText("Salvar");
+        btnSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalvarMouseClicked(evt);
+            }
+        });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGerarActionPerformed(evt);
+                btnSalvarActionPerformed(evt);
             }
         });
 
-        jLabelsalarioBruto.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabelsalarioBruto.setText("Salario Bruto");
+        lblnome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblnome.setText("Nome");
+
+        buttonGroup1.add(rbnInsMedio);
+        rbnInsMedio.setText("20%");
+        rbnInsMedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbnInsMedioActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(rbnInsAlto);
+        rbnInsAlto.setText("40%");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,100 +110,143 @@ public class TelaDeCadastro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabelquantidadeDeFilhos)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtQuantidadeDeFilhos, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabelhorasExtras)
-                                .addComponent(jLabelsalarioLiquido)
-                                .addComponent(jLabelsalarioBruto))
-                            .addGap(41, 41, 41)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtSalarioLiquido)
-                                .addComponent(txtHorasExtras, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
-                                .addComponent(txtSalarioBruto))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelnivelDeInsalubridade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RBinsalubridadeSim)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RBInsalubridadeNao)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldNivelDeInsalubridade, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButtonGerar)
+                    .addComponent(btnSalvar)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelPericulosidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RBPericulosidadeSim)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RBPericulosidadeNao)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbPericulosidade))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabelhorasExtras)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtHorasExtras, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabelnivelDeInsalubridade)
+                            .addGap(18, 18, 18)
+                            .addComponent(rbnInsBaixo)
+                            .addGap(18, 18, 18)
+                            .addComponent(rbnInsMedio)
+                            .addGap(18, 18, 18)
+                            .addComponent(rbnInsAlto))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabelquantidadeDeFilhos)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtQuantidadeDeFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(jLabelsalarioLiquido)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtSalarioBruto, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblnome)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelsalarioLiquido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSalarioLiquido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelsalarioBruto)
-                    .addComponent(txtSalarioBruto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblnome)
+                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSalarioBruto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelsalarioLiquido, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelhorasExtras, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHorasExtras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelquantidadeDeFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtQuantidadeDeFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(RBinsalubridadeSim)
-                        .addComponent(RBInsalubridadeNao)
-                        .addComponent(jTextFieldNivelDeInsalubridade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabelnivelDeInsalubridade, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelnivelDeInsalubridade, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rbnInsBaixo)
+                    .addComponent(rbnInsMedio)
+                    .addComponent(rbnInsAlto))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPericulosidade)
-                    .addComponent(RBPericulosidadeSim)
-                    .addComponent(RBPericulosidadeNao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(jButtonGerar)
+                    .addComponent(cbPericulosidade))
+                .addGap(41, 41, 41)
+                .addComponent(btnSalvar)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonGerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGerarActionPerformed
-        ModeloTelaDeCadastroFuncionario tela = new ModeloTelaDeCadastroFuncionario();
-        tela.setsalarioLiquido(txtSalarioLiquido.getText());
-        tela.setsalarioBruto(txtSalarioBruto.getText());
-        tela.setquantidadeDeFilhos(txtQuantidadeDeFilhos.getText());
-        tela.sethorasExtras(txtHorasExtras.getText());
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        Funcionario tela = new Funcionario();
+       double salario;
+        tela.setNome(txtnome.getText());
+        tela.setFilhos(Integer.parseInt(txtQuantidadeDeFilhos.getText()));
+        tela.setHorasExtras(Double.parseDouble(txtHorasExtras.getText()));
+        if(rbnInsBaixo.isSelected()){
+            tela.setNivelDeInsalubridade(10);
+        }else if(rbnInsMedio.isSelected()){
+            tela.setNivelDeInsalubridade(20);
+        }else tela.setNivelDeInsalubridade(40);
+        tela.setPericulosidade(cbPericulosidade.isSelected());
+        salario = Integer.parseInt(txtSalarioBruto.getText());
+        if(tela.getPericulosidade()){
+            salario = salario + 0.3*salario;
+        }
+        switch(tela.getNivelDeInsalubridade()){
+            case 10: salario = salario + 119.6;
+                    tela.setSalarioBruto(salario);
+                    break;
+            case 20: salario = salario + 232.2;
+                    tela.setSalarioBruto(salario);
+                    break;
+            case 40: salario = salario + 478.4;
+                    tela.setSalarioBruto(salario);
+                    break;
+        }
         
-        FolhaDePagamento frm = new FolhaDePagamento();
+        FuncionarioDAO.inserir(tela);
+         
         
-        frm.exportarComponentes(tela);
-        frm.setVisible(true);
-      
-      
-      
-      
-    }//GEN-LAST:event_jButtonGerarActionPerformed
 
-    private void RBinsalubridadeSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RBinsalubridadeSimActionPerformed
-        txtSalarioLiquido.setVisible( true );
-        txtSalarioBruto.setVisible( true );
-        txtQuantidadeDeFilhos.setVisible( true );
-        txtHorasExtras.setVisible( true );
-    }//GEN-LAST:event_RBinsalubridadeSimActionPerformed
+        
+        
+        
+        
+        
+
+      
+      
+      
+      
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void txtHorasExtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHorasExtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHorasExtrasActionPerformed
+
+    private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvarMouseClicked
+
+    private void txtQuantidadeDeFilhosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeDeFilhosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantidadeDeFilhosActionPerformed
+
+    private void rbnInsBaixoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnInsBaixoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnInsBaixoActionPerformed
+
+    private void rbnInsMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbnInsMedioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbnInsMedioActionPerformed
+
+    private void txtSalarioBrutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalarioBrutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSalarioBrutoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,21 +284,21 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton RBInsalubridadeNao;
-    private javax.swing.JRadioButton RBPericulosidadeNao;
-    private javax.swing.JRadioButton RBPericulosidadeSim;
-    private javax.swing.JRadioButton RBinsalubridadeSim;
-    private javax.swing.JButton jButtonGerar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox cbPericulosidade;
     private javax.swing.JLabel jLabelPericulosidade;
     private javax.swing.JLabel jLabelhorasExtras;
     private javax.swing.JLabel jLabelnivelDeInsalubridade;
     private javax.swing.JLabel jLabelquantidadeDeFilhos;
-    private javax.swing.JLabel jLabelsalarioBruto;
     private javax.swing.JLabel jLabelsalarioLiquido;
-    private javax.swing.JTextField jTextFieldNivelDeInsalubridade;
+    private javax.swing.JLabel lblnome;
+    private javax.swing.JRadioButton rbnInsAlto;
+    private javax.swing.JRadioButton rbnInsBaixo;
+    private javax.swing.JRadioButton rbnInsMedio;
     private javax.swing.JTextField txtHorasExtras;
     private javax.swing.JTextField txtQuantidadeDeFilhos;
     private javax.swing.JTextField txtSalarioBruto;
-    private javax.swing.JTextField txtSalarioLiquido;
+    private javax.swing.JTextField txtnome;
     // End of variables declaration//GEN-END:variables
 }
