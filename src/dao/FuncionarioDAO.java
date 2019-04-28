@@ -17,33 +17,35 @@ import javax.swing.JOptionPane;
 public class FuncionarioDAO{
     public static boolean inserir(Funcionario fun){
         String sql = "INSERT INTO funcionarios "
-                + " ( nome, Bruto, Filhos, periculosidade, horas,Insalubridade ) "
+                + " ( nome, Bruto, Filhos, periculosidade, inss, horas, Insalubridade ) "
                 + " VALUES ("
-                + " '" + fun.getNome()              + "' , "
-                + " " + fun.getSalarioBruto()                 + " , "
-                + " " + fun.getQuantidadeDeFilhos()      + " , "
-                + " " + fun.getPericulosidade()          + " , "
-                + " " + fun.getHorasExtras()              + ",  "
-                + "  "+fun.getNivelDeInsalubridade()      +"   "
+                + " '" + fun.getNome()                  + "' , "
+                + " " + fun.getSalarioBruto()           + " , "
+                + " " + fun.getQuantidadeDeFilhos()     + " , "
+                + " " + fun.getPericulosidade()         + " , "
+                + " " + fun.getInss()                   + " , "
+                + " " + fun.getHorasExtras()            + ",  "
+                + "  "+fun.getNivelDeInsalubridade()    +"   "
             + " );";
         return Conexao.executar(sql);
     }
     
     public static boolean editar(Funcionario fun){
         String sql = "UPDATE funcionario SET "
-            + " nome            = '" + fun.getNome()  + "' , "
-            + " salarioLiquido = " + fun.getSalarioLiquido()              + " , "
-            + " salarioBruto =     " + fun.getSalarioBruto()              + " , "
-            + " quantidadeDeFilhos = " + fun.getQuantidadeDeFilhos()          + " , "
-            + " periculosidade =     '" + fun.getPericulosidade()+ "' , "
-            + " horasExtras = " + fun.getHorasExtras(); 
+            + " nome            =    '"  + fun.getNome()               + "' , "
+            + " salarioLiquido =      "  + fun.getSalarioLiquido()     + " , "
+            + " salarioBruto =        "  + fun.getSalarioBruto()       + " , "
+            + " quantidadeDeFilhos =  "  + fun.getQuantidadeDeFilhos() + " , "
+            + " periculosidade =     '"  + fun.getPericulosidade()     + "' , "
+            + " periculosidade =     '"  + fun.getInss()               + "' , "
+            + " horasExtras =         "  + fun.getHorasExtras(); 
         return Conexao.executar(sql);
     }
        public static List<Funcionario> getFuncionarios(){
         List<Funcionario> lista = new ArrayList<>();
         String sql = "SELECT  f.nome, f.Bruto,"
-            + " f.Filhos , f.periculosidade, f.horas,  "
-            +"f.insalubridade"    
+            + " f.Filhos , f.periculosidade, f.inss, f.horas,  "
+            + " f.insalubridade"    
             + " FROM funcionarios f  "
             + " ORDER BY f.nome";
         ResultSet rs = Conexao.consultar( sql );

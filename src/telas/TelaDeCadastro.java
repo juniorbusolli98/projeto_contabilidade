@@ -18,6 +18,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jRadioButton1 = new javax.swing.JRadioButton();
         rbnInsBaixo = new javax.swing.JRadioButton();
         jLabelsalarioLiquido = new javax.swing.JLabel();
         txtSalarioBruto = new javax.swing.JTextField();
@@ -33,6 +34,10 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         rbnInsMedio = new javax.swing.JRadioButton();
         rbnInsAlto = new javax.swing.JRadioButton();
         cbPericulosidade = new javax.swing.JCheckBox();
+        jLabelInss = new javax.swing.JLabel();
+        cbInss = new javax.swing.JCheckBox();
+
+        jRadioButton1.setText("jRadioButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -103,6 +108,9 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         buttonGroup1.add(rbnInsAlto);
         rbnInsAlto.setText("40%");
 
+        jLabelInss.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelInss.setText("Inss");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -111,11 +119,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalvar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelPericulosidade)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbPericulosidade))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabelhorasExtras)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -131,7 +135,15 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabelquantidadeDeFilhos)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtQuantidadeDeFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtQuantidadeDeFilhos, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabelInss, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabelPericulosidade, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cbPericulosidade)
+                                .addComponent(cbInss))))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addComponent(jLabelsalarioLiquido)
@@ -146,7 +158,7 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
+                .addGap(0, 4, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblnome)
                     .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,7 +184,11 @@ public class TelaDeCadastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPericulosidade)
                     .addComponent(cbPericulosidade))
-                .addGap(41, 41, 41)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelInss)
+                    .addComponent(cbInss))
+                .addGap(18, 18, 18)
                 .addComponent(btnSalvar)
                 .addContainerGap())
         );
@@ -193,6 +209,11 @@ public class TelaDeCadastro extends javax.swing.JFrame {
         }else tela.setNivelDeInsalubridade(40);
         tela.setPericulosidade(cbPericulosidade.isSelected());
         salario = Integer.parseInt(txtSalarioBruto.getText());
+        
+        if(tela.getInss()){
+            
+        }
+        
         if(tela.getPericulosidade()){
             salario = salario + 0.3*salario;
         }
@@ -286,12 +307,15 @@ public class TelaDeCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalvar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JCheckBox cbInss;
     private javax.swing.JCheckBox cbPericulosidade;
+    private javax.swing.JLabel jLabelInss;
     private javax.swing.JLabel jLabelPericulosidade;
     private javax.swing.JLabel jLabelhorasExtras;
     private javax.swing.JLabel jLabelnivelDeInsalubridade;
     private javax.swing.JLabel jLabelquantidadeDeFilhos;
     private javax.swing.JLabel jLabelsalarioLiquido;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JLabel lblnome;
     private javax.swing.JRadioButton rbnInsAlto;
     private javax.swing.JRadioButton rbnInsBaixo;

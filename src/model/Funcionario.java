@@ -15,11 +15,6 @@ public class Funcionario {
     private boolean  periculosidade;
     private int Filhos;
 
-    public Funcionario(){ 
-    }
-    
-    
-    
     public Funcionario(String nome, double salarioBruto, double salarioLiquido, double horasExtras, int quantidadeDeFilhos, int nivelDeInsalubridade,
             Boolean periculosidade, Boolean inss) {
         this.nome = nome;
@@ -33,9 +28,8 @@ public class Funcionario {
     }
 
     
-
-    
-
+    public Funcionario(){ 
+    }
     
    public void setNome(String nome){
        this.nome = nome;
