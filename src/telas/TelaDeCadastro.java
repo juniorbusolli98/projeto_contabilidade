@@ -208,11 +208,14 @@ public class TelaDeCadastro extends javax.swing.JFrame {
             tela.setNivelDeInsalubridade(20);
         }else tela.setNivelDeInsalubridade(40);
         tela.setPericulosidade(cbPericulosidade.isSelected());
+        tela.setPericulosidade(cbInss.isSelected());
         salario = Integer.parseInt(txtSalarioBruto.getText());
         
         if(tela.getInss()){
-            
+            salario = salario - 0.08*salario;
+            //O teto salarial da empresa corresponde a R$1.693,72, por isso o desconto será de 8%.
         }
+        
         
         if(tela.getPericulosidade()){
             salario = salario + 0.3*salario;

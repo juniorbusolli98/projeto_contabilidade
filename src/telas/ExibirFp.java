@@ -34,6 +34,8 @@ public ExibirFp(int i){
       lblLiquido.setText(String.valueOf((func.getSalarioLiquido())));
       lblBruto.setText(String.valueOf(func.getSalarioBruto()));
       cbPericulosidade.setSelected(func.getPericulosidade());
+      cbInss.setSelected(func.getInss());
+      System.out.println(func.getInss());
       System.out.println(func.getPericulosidade());
       
   }
@@ -56,6 +58,8 @@ public ExibirFp(int i){
         lblHorasExtras = new javax.swing.JLabel();
         lblBruto = new javax.swing.JLabel();
         lblLiquido = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        cbInss = new javax.swing.JCheckBox();
 
         jLabel4.setText("jLabel4");
 
@@ -89,35 +93,14 @@ public ExibirFp(int i){
 
         lblLiquido.setText("jLabel1");
 
+        jLabel1.setText("Inss");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label2)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbPericulosidade))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label3)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblInsalubridade))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label4)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblHorasExtras))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblNome))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(label1)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblFilhos))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(168, 168, 168)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,8 +112,38 @@ public ExibirFp(int i){
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(label55)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblBruto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(lblBruto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label2)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbPericulosidade))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblNome))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label1)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblFilhos))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label4)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblHorasExtras))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(cbInss)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label3)
+                .addGap(18, 18, 18)
+                .addComponent(lblInsalubridade)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +160,11 @@ public ExibirFp(int i){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label2)
                     .addComponent(cbPericulosidade))
-                .addGap(18, 18, 18)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cbInss))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label3)
                     .addComponent(lblInsalubridade))
@@ -155,7 +172,7 @@ public ExibirFp(int i){
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label4)
                     .addComponent(lblHorasExtras))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label55)
                     .addComponent(lblBruto))
@@ -171,7 +188,9 @@ public ExibirFp(int i){
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox cbInss;
     private javax.swing.JCheckBox cbPericulosidade;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label1;

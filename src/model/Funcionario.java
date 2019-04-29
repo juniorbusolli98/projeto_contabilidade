@@ -28,8 +28,12 @@ public class Funcionario {
     }
 
     
+    
+    
     public Funcionario(){ 
     }
+    
+    
     
    public void setNome(String nome){
        this.nome = nome;

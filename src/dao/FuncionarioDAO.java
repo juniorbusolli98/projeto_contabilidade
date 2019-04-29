@@ -37,7 +37,7 @@ public class FuncionarioDAO{
             + " salarioBruto =        "  + fun.getSalarioBruto()       + " , "
             + " quantidadeDeFilhos =  "  + fun.getQuantidadeDeFilhos() + " , "
             + " periculosidade =     '"  + fun.getPericulosidade()     + "' , "
-            + " periculosidade =     '"  + fun.getInss()               + "' , "
+            + " inss =     '"  + fun.getInss()               + "' , "
             + " horasExtras =         "  + fun.getHorasExtras(); 
         return Conexao.executar(sql);
     }
@@ -53,14 +53,11 @@ public class FuncionarioDAO{
             try{
                 while ( rs.next() ) {  
                     Funcionario fun = new Funcionario();
-                    
                     fun.setNome( rs.getString(2));
                     fun.setSalarioBruto(rs.getInt(3));
                     fun.setFilhos(rs.getInt(4));
                     fun.setPericulosidade(rs.getBoolean(5));
-                    fun.setHorasExtras(rs.getDouble(6));
- 
-                    
+                    fun.setHorasExtras(rs.getDouble(6)); 
                     lista.add(fun);
                 } 
             }catch(Exception e){
